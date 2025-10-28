@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atatürk'ün El Yazısı: Bir Duygu Arkeolojisi</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Ana font ailesini Inter olarak ayarlıyoruz */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Koyu gri/mavi arka plan */
+            color: #f3f4f6; /* Açık gri yazı */
+        }
+        
+        /* Aktif olmayan sekmeler için stil */
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+
+        /* Aktif sekme için özel stil */
+        .tab-button.active {
+            background-color: #374151; /* Koyu panel rengi */
+            color: #f59e0b; /* Altın/Amber rengi */
+            border-bottom-color: #f59e0b;
+        }
+        
+        /* Hotspot (işaretçi) stilleri */
+        .hotspot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: rgba(245, 158, 11, 0.7); /* Yarı saydam amber */
+            border: 2px solid white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+            display: none; /* Varsayılan olarak gizli */
+        }
+        
+        .hotspot:hover {
+            transform: scale(1.2);
+            background-color: rgba(245, 158, 11, 1);
+        }
+        
+        /* Hotspot'lar için animasyon */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navigasyon Barı -->
+    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <span class="text-xl font-bold text-white">Duygu Arkeolojisi</span>
+                <div class="space-x-4">
+                    <a href="#proje-hakkinda" class="text-gray-300 hover:text-yellow-400 transition-colors">Proje Hakkında</a>
+                    <a href="#kazialani" class="text-gray-300 hover:text-yellow-400 transition-colors">Kazı Alanı</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Ana Sayfa (Hero) Alanı -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="min-h-[60vh] flex items-center justify-center text-center py-20">
+            <div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    Kâğıttaki İzler: <br>
+                    <span class="text-yellow-400">Bir Duygu Arkeolojisi Projesi</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    Mustafa Kemal Atatürk'ün el yazısını katman katman inceliyor, tarihin en kritik anlarındaki ruh halini deşifre ediyoruz.
+                </p>
+                <a href="#kazialani" class="mt-10 inline-block bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:bg-yellow-400 transition-transform transform hover:scale-105">
+                    Kazıya Başla
+                </a>
+            </div>
+        </section>
+
+        <!-- Proje Hakkında Alanı -->
+        <section id="proje-hakkinda" class="py-24">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Duygu Arkeolojisi Nedir?</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    El yazısı, bir insanın o anki duygusal parmak izidir. Tıpkı bir arkeoloğun toprağın katmanlarını kaldırarak tarihi aydınlatması gibi, biz de bu projede kâğıdın yüzeyinin altına iniyoruz.
+                </p>
+                <p class="mt-4 text-lg text-gray-300 leading-relaxed">
+                    Amacımız, "Ne yazdı?" sorusunun ötesine geçip, "Nasıl yazdı?" ve "O an ne hissetti?" sorularına yanıt aramaktır. Bir siperde hissedilen 'kararlı aciliyet' ile Nutuk'u yazarkenki 'düşünsel konsantrasyon' arasındaki farkı, kâğıda bıraktığı izlerden okumaya çalışıyoruz.
+                </p>
+            </div>
+        </section>
+
+        <!-- Metodoloji Alanı -->
+        <section id="metodoloji" class="py-24 bg-gray-800 rounded-lg">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">Arkeoloğun Alet Çantası</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8">
+                <!-- Tarihçi Kartı -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-yellow-400 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">1. Tarihçi</h3>
+                    <p class="text-gray-300">Bize o anı anlatır. Belge ne zaman, hangi şartlarda yazıldı? O an ne oluyordu?</p>
+                </div>
+                <!-- Tasarımcı Kartı -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-yellow-400 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">2. Tasarımcı</h3>
+                    <p class="text-gray-300">Fiziksel izleri inceler. Kalem baskısı, yazma hızı, mürekkebin dağılımı. Hangi aletler kullanılmış?</p>
+                </div>
+                <!-- Grafolog Kartı -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-yellow-400 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879a3 3 0 014.242 0L18 16M8 16V5a2 2 0 012-2h2a2 2 0 012 2v11m-6 0h6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">3. Grafolog</h3>
+                    <p class="text-gray-300">Duygusal izleri okur. Harf eğimi, boyutu, satır düzeni bize karakter ve o anki duygu hakkında ne söyler?</p>
+                </div>
+                <!-- Psikolog Kartı -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-yellow-400 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">4. Psikolog</h3>
+                    <p class="text-gray-300">Tüm bulguları birleştirir. Tüm bu veriler ışığında, o anki ruh hali neydi? Stres mi, özgüven mi?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kazı Alanı (İnteraktif Analiz) -->
+        <section id="kazialani" class="py-24">
+            <h2 class="text-3xl font-bold text-white text-center mb-4">KAZI ALANI</h2>
+            <p class="text-xl text-yellow-400 text-center mb-12">Vaka 001: Sakarya Emri (1921)</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                
+                <!-- Sol Taraf: Belge Görseli ve Hotspot'lar -->
+                <div class="relative bg-gray-700 rounded-lg shadow-lg p-2 aspect-w-3 aspect-h-4">
+                    <img src="https://placehold.co/800x1100/4b5563/e5e7eb?text=Vaka+001:\nSakarya+Emri\n(Belge+Görseli)" 
+                         alt="Sakarya Emri belgesinin temsili görseli"
+                         class="w-full h-full object-contain rounded-md">
+                    
+                    <!-- NOT: Bu hotspot'ların pozisyonları temsili bir görsel üzerindendir -->
+                    
+                    <!-- Katman 2 (Tasarımcı) Hotspot'ları -->
+                    <div class="hotspot hotspot-tab2" style="top: 20%; left: 30%;" data-tab-target="tab2"></div>
+                    <div class="hotspot hotspot-tab2" style="top: 45%; left: 50%;" data-tab-target="tab2"></div>
+
+                    <!-- Katman 3 (Grafolog) Hotspot'ları -->
+                    <div class="hotspot hotspot-tab3" style="top: 30%; left: 70%;" data-tab-target="tab3"></div>
+                    <div class="hotspot hotspot-tab3" style="top: 60%; left: 25%;" data-tab-target="tab3"></div>
+                </div>
+
+                <!-- Sağ Taraf: Arkeoloğun Not Defteri (Sekmeler) -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Arkeoloğun Not Defteri</h3>
+                    
+                    <!-- Sekme Başlıkları -->
+                    <div class="flex border-b border-gray-700">
+                        <button class="tab-button active py-3 px-4 font-semibold border-b-2 border-transparent text-gray-400" data-tab-target="tab1">
+                            1. Katman: Tarihsel Zemin
+                        </button>
+                        <button class="tab-button py-3 px-4 font-semibold border-b-2 border-transparent text-gray-400" data-tab-target="tab2">
+                            2. Katman: Yüzey Bulguları
+                        </button>
+                        <button class="tab-button py-3 px-4 font-semibold border-b-2 border-transparent text-gray-400" data-tab-target="tab3">
+                            3. Katman: Derin İnceleme
+                        </button>
+                        <button class="tab-button py-3 px-4 font-semibold border-b-2 border-transparent text-gray-400" data-tab-target="tab4">
+                            4. Katman: Sentez (Keşif)
+                        </button>
+                    </div>
+
+                    <!-- Sekme İçerikleri -->
+                    <div class="bg-gray-800 rounded-b-lg rounded-tr-lg shadow-inner">
+                        
+                        <!-- Katman 1 İçeriği -->
+                        <div class="tab-content p-6" id="tab1">
+                            <h4 class="text-xl font-bold text-yellow-400 mb-3">Tarihçi Notu:</h4>
+                            <p class="text-gray-300 leading-relaxed">
+                                Bu belge yazıldığında, Yunan ordusu Polatlı'ya 10 km mesafedeydi. Meclis'te büyük kaygı vardı ve geri çekilme sesleri yükseliyordu. Bu emir, "Hattı müdafaa yoktur, sathı müdafaa vardır" stratejisinin verildiği anlarda, cephedeki komutanlara gönderilmiş el yazısı bir nottur. Atmosfer, ulusal bir 'varlık-yokluk' mücadelesi atmosferidir.
+                            </p>
+                        </div>
+                        
+                        <!-- Katman 2 İçeriği -->
+                        <div class="tab-content p-6 hidden" id="tab2">
+                            <h4 class="text-xl font-bold text-yellow-400 mb-3">Tasarımcı Analizi (Fiziksel):</h4>
+                            <ul class="list-disc list-inside text-gray-300 leading-relaxed space-y-2">
+                                <li>Yazı çok hızlı ve akıcı. Harf aralarındaki bağlantılar kesintisiz, bu da düşünce akışının duraksamadığını gösterir.</li>
+                                <li>Kalem baskısı (basıı gücü) çok yüksek. Mürekkep kağıda neredeyse gömülmüş. Bu, fiziksel bir enerji, yüksek bir adrenalin ve kararlılık göstergesidir.</li>
+                                <li>Kullanılan kalem, bir dolma kalem. Mürekkep dağılımındaki düzensizlikler (bazı yerlerde taşma) yazının hızından kaynaklanmaktadır.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Katman 3 İçeriği -->
+                        <div class="tab-content p-6 hidden" id="tab3">
+                            <h4 class="text-xl font-bold text-yellow-400 mb-3">Grafolog Analizi (Duygusal):</h4>
+                            <ul class="list-disc list-inside text-gray-300 leading-relaxed space-y-2">
+                                <li>Harflerin sağa eğimi normalden fazla. Bu, acil eyleme geçme dürtüsünü, geleceğe odaklanmayı ve sabırsızlığı gösterir.</li>
+                                <li>Satır çizgisi, bir çizgi olmamasına rağmen şaşırtıcı derecede düz ve hafifçe yukarı meyilli. Bu, aşırı yorgunluk ve strese rağmen iradenin ve iyimserliğin ayakta kaldığını simgeler.</li>
+                                <li>Harf büyüklükleri (orta zon) tutarlı; bu da duygusal kontrolün kaybedilmediğini gösterir.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Katman 4 İçeriği -->
+                        <div class="tab-content p-6 hidden" id="tab4">
+                            <h4 class="text-xl font-bold text-yellow-400 mb-3">Psikolog Sentezi (Keşif):</h4>
+                            <div class="bg-gray-900 p-4 rounded-lg border-l-4 border-yellow-400">
+                                <p class="text-lg font-bold text-white mb-2">ARKEOLOJİK BULGU:</p>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Bu el yazısında 'panik', 'korku' veya 'tereddüt' izine rastlanmamıştır. Aksine, tüm enerjisini tek bir hedefe odaklamış, baskı altında soğukkanlılığını koruyan bir liderin **'kontrollü ve kararlı aciliyet'** halini görüyoruz. Psikolojik direncin zirvede olduğu bir andır.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 mt-24">
+        <div class="container mx-auto px-8 py-12 text-center text-gray-400">
+            <p>&copy; 2025 Duygu Arkeolojisi Projesi. Bir konsept çalışmasıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sayfa yüklendiğinde JavaScript'i çalıştır
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabsContainer = document.querySelector('#kazialani');
+            const tabs = tabsContainer.querySelectorAll('.tab-button');
+            const contents = tabsContainer.querySelectorAll('.tab-content');
+            const allHotspots = tabsContainer.querySelectorAll('.hotspot');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.dataset.tabTarget;
+                    const targetContent = document.getElementById(targetId);
+
+                    // Diğer tüm tab'ları ve içerikleri pasif hale getir
+                    tabs.forEach(t => t.classList.remove('active', 'border-yellow-400'));
+                    contents.forEach(c => c.classList.add('hidden'));
+                    allHotspots.forEach(h => h.style.display = 'none');
+
+                    // Tıklanan tab'ı ve içeriği aktif hale getir
+                    tab.classList.add('active', 'border-yellow-400');
+                    if (targetContent) {
+                        targetContent.classList.remove('hidden');
+                    }
+                    
+                    // İlgili hotspot'ları göster
+                    const targetHotspots = tabsContainer.querySelectorAll(`.hotspot-${targetId}`);
+                    targetHotspots.forEach(h => h.style.display = 'block');
+                });
+            });
+
+            // Başlangıçta ilk tab'ı ve ilgili hotspot'ları manuel olarak tetikle
+            // (Sayfa yüklendiğinde 'Tarihsel Zemin' açık gelsin)
+            // Eğer isterseniz 'Tasarımcı' sekmesinin hotspotları da görünsün diye 
+            // aşağıdaki satırı `tabs[1].click();` yapabilirsiniz.
+            tabs[0].click();
+        });
+    </script>
+</body>
+</html>
